@@ -1,6 +1,6 @@
 ## Design and Verification of an 8-bit Microcontroller using Verilog
 
-## Project Summary
+### Project Summary
 
 Design and Verification of 8 bit microcontroller using Verilog. Goal is to design custom microcontroller architecture with its own instruction set & verified its functionality through simulation in Vivado.
 
