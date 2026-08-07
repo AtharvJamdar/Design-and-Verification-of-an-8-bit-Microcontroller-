@@ -48,7 +48,7 @@ For verification I wrote multiple test programs in a binary file & loaded them i
 
 ## Processor Architecture
 
-
+<img width="1308" height="1202" alt="Image" src="https://github.com/user-attachments/assets/8d937be3-9908-4ab7-afc8-00a4960a5a0d" />
 
 ## RTL Module Hierarchy
 
