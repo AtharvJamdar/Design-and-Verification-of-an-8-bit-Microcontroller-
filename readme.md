@@ -31,6 +31,11 @@ For verification I wrote multiple test programs in a binary file & loaded them i
 - Simulation performed in Xilinx Vivado
 
 ## Processor Architecture
+The microcontroller consists of three major subsystems:
+
+- Datapath
+- Control Unit
+- Memory System
 
 <img width="1308" height="1202" alt="Image" src="https://github.com/user-attachments/assets/8d937be3-9908-4ab7-afc8-00a4960a5a0d" />
 
