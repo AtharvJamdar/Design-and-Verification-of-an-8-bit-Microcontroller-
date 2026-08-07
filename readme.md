@@ -1,6 +1,6 @@
 ## Project Title
 
-## Design and Verification of an 8-bit Microcontroller using Verilog
+Design and Verification of an 8-bit Microcontroller using Verilog
 
 ## Project Summary
 
@@ -18,9 +18,9 @@ For verification I wrote multiple test programs in a binary file & loaded them i
 
 ## Features
 
-- \- Designed a custom 8-bit Harvard Architecture Microcontroller
+- \ Designed a custom 8-bit Harvard Architecture Microcontroller
 
-- \- Developed in Verilog HDL
+- \ Developed in Verilog HDL
 
 - \- 12-bit custom instruction format
 
