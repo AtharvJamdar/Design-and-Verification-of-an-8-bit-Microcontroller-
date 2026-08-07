@@ -138,13 +138,13 @@ Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage,
 <img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/888042f1-f264-42cd-b738-f1c53fda21d0" />
 ## States:
 
-- 1. LOAD (initial state): load program to program memory, which takes 1 cycle per instruction loaded;
+1. LOAD (initial state): load program to program memory, which takes 1 cycle per instruction loaded;
 
-- 2. FETCH (first cycle): fetch current instruction from program memory;
+2. FETCH (first cycle): fetch current instruction from program memory;
 
-- 3. DECODE (second cycle): decode instruction to generate control logic, read data memory for operand;
+3. DECODE (second cycle): decode instruction to generate control logic, read data memory for operand;
 
-- 4. EXECUTE (of the third cycle): execute instruction
+4. EXECUTE (of the third cycle): execute instruction
 
 ## Transitions:
 1.	LOAD →  FETCH (initialization finish):
@@ -154,9 +154,9 @@ Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage,
 3.	DECODE → EXECUTE
     DR = DMem [ IR[3:0] ];
 4.	EXECUTE → FETCH (rising edge of first cycle and fourth cycle)
-    a. For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
-    b. For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
-    c. For ALU instruction, SR = ALU.Status;
+    - For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
+    - For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
+    - For ALU instruction, SR = ALU.Status;
 
 The transitions can be simplified using enable port of corresponding registers, e.g. assign ALU.Out to Acc at every clock rising edge if Acc.E is set to 1. Such control signals as Acc.E are generated as a boolean function of both current state and the current instruction.
 
