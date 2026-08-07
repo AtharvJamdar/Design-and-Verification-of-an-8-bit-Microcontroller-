@@ -205,10 +205,6 @@ This program verifies the execution of memory-related instructions such as loadi
 0011_0011_0000
 0001_0000_0101
 0000_0000_0000
-```
-
-
-```
 0000_0000_0000
 0000_0000_0000
 0000_0000_0000
@@ -272,26 +268,26 @@ The simulation results verify the correct functionality of the proposed 8-bit Mi
 
 ## Tools Used
 
-- \- Xilinx Vivado (RTL Coding)
+- Xilinx Vivado (RTL Coding)
 
-- \- QuestaSim (Simulation Waveforms)
+- QuestaSim (Simulation Waveforms)
 
-- \- GitHub
+- GitHub
 
 ## Authors
 
-## Ketan Jamdar
+### Ketan Jamdar
+**B.E. Electronics and Telecommunication**  
+*RTL Design and Verification Engineer*
 
-B.E. Electronics and Telecommunication (RTL Design and Verification Engineer)
+- **GitHub:** https://github.com/ketan-jamdar
+- **LinkedIn:** https://www.linkedin.com/in/ketan-jamdar-432b6a265
 
-\- GitHub: https://github.com/ketan-jamdar
+---
 
-\- LinkedIn: https://www.linkedin.com/in/ketan-jamdar-432b6a265
+### Atharv Jamdar
+**B.E. Electronics and Telecommunication**  
+*RTL Design and Verification Engineer*
 
-## Atharv Jamdar
-
-B.E. Electronics and Telecommunication (RTL Design and Verification Engineer)
-
-\- GitHub: https://github.com/AtharvJamdar
-
-\- LinkedIn: https://www.linkedin.com/in/atharv-jamdar-2a9a25197
+- **GitHub:** https://github.com/AtharvJamdar
+- **LinkedIn:** https://www.linkedin.com/in/atharv-jamdar-2a9a25197
