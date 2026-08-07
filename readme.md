@@ -185,13 +185,13 @@ Verification includes:
 To verify the functionality of the 8-bit Microcontroller, four test programs were developed. Each program focuses on validating a specific group of instructions, ensuring correct execution of memory access, arithmetic, logical, and shift/rotate operations.
 
 ## Test Program Summary
+|  **Program**  | **Purpose**                 |
+| :-----------: | --------------------------- |
+| **Program 1** | Memory Operations           |
+| **Program 2** | Arithmetic Operations       |
+| **Program 3** | Logic Operations            |
+| **Program 4** | Shift and Rotate Operations |
 
-| Program | Purpose |
-| --- | --- |
-| Program 1 Memory Operations |   |
-| Program 2 Arithmetic Operations |   |
-|   | Program 3 Logic Operations |
-| Program 4 Shift and Rotate Operations |   |
 
 ## Test Program 1 – Memory Operations
 
