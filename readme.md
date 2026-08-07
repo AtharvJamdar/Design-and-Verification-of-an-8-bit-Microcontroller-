@@ -99,17 +99,17 @@ MicroController
 
 Each instruction in the microcontroller is 12 bits wide. Based on the instruction encoding, the instruction set is wide. Based on the instruction encoding, the instruction set is divided into three types: M-type, I-type, and S-type.
 
-## M-type (Memory Instruction):
+### M-type (Memory Instruction):
 
 One operand is the Accumulator (ACC) (or may be ignored depending on the operation), while the peration), while the second operand is obtained from the second operand is obtained from the Data Memory (DMem). The operation result is stored either in the Accumulator or back into the same Data Memory location.
 <img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/235a68b7-aa86-41a8-8f43-b23cdc3ef660" />
 
-## I-type (Immediate Instruction):
+### I-type (Immediate Instruction):
 
 One operand is the Accumulator (ACC), and the second operand is an immediate value immediate value encoded within the instruction. The result of the operation is always stored in the the instruction. The result of the operation is always stored in the Accumulator.
 <img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/58dcce35-b096-493f-8c73-3b058a369f99" />
 
-## S-type (Special Instruction):
+### S-type (Special Instruction):
 
 These instructions do not require any operands. They are used to perform special processor operations These instructions do not require any operands. They are used to perform special processor such as NOP (No Operation).
 <img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/6622cf56-8d84-426c-987f-acb00d1ad941" />
