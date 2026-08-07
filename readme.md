@@ -1,6 +1,4 @@
-## Project Title
-
-### Design and Verification of an 8-bit Microcontroller using Verilog
+## Design and Verification of an 8-bit Microcontroller using Verilog
 
 ## Project Summary
 
