@@ -80,8 +80,6 @@ MicroController
 
 ## Module Description
 
-## Module Description
-
 | Module | Description |
 |--------|-------------|
 | **ALU** | Performs arithmetic and logical operations. |
@@ -136,27 +134,86 @@ These instructions do not require any operands. They are used to perform special
 
 Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage, and EXECUTE stage. Note that it is not pipelined. Together with the initial LOAD state, it can be considered as an FSM of 3 states (technically 4 states).
 <img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/888042f1-f264-42cd-b738-f1c53fda21d0" />
-## States:
 
-**1. LOAD (initial state):** load program to program memory, which takes 1 cycle per instruction loaded;
+### States
 
-**2. FETCH (first cycle):** fetch current instruction from program memory;
+1. **LOAD (Initial State):**
+   - Load the program into Program Memory.
+   - Takes **1 clock cycle per instruction** loaded.
 
-**3. DECODE (second cycle):** decode instruction to generate control logic, read data memory for operand;
+2. **FETCH (First Cycle):**
+   - Fetch the current instruction from Program Memory.
 
-**4. EXECUTE (of the third cycle):** execute instruction
+3. **DECODE (Second Cycle):**
+   - Decode the instruction to generate control signals.
+   - Read the operand from Data Memory.
 
-## Transitions:
-**1.	LOAD** →  FETCH (initialization finish): 
-    Clear content of PC, IR, DR, Acc, SR; DMem is not required to be cleared.
-**2.	FETCH** → DECODE (rising edge of second cycle) : 
-    IR = PMem [ PC ]
-**3.	DECODE** → EXECUTE : 
-    DR = DMem [ IR[3:0] ];
-**4.	EXECUTE** → FETCH (rising edge of first cycle and fourth cycle) : 
-    - For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
-    - For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
-    - For ALU instruction, SR = ALU.Status;
+4. **EXECUTE (Third Cycle):**
+   - Execute the instruction.
+
+### State Transitions
+
+#### 1. LOAD → FETCH (Initialization Complete)
+
+- Clear the contents of:
+  - Program Counter (PC)
+  - Instruction Register (IR)
+  - Data Register (DR)
+  - Accumulator (Acc)
+  - Status Register (SR)
+- Data Memory (DMem) is **not** required to be cleared.
+
+---
+
+#### 2. FETCH → DECODE
+
+At the rising edge of the second cycle:
+
+```text
+IR = PMem[PC]
+```
+
+---
+
+#### 3. DECODE → EXECUTE
+
+```text
+DR = DMem[IR[3:0]]
+```
+
+---
+
+#### 4. EXECUTE → FETCH
+
+At the rising edge of the fourth cycle:
+
+- **Program Counter Update**
+  - For non-branch instructions:
+    ```text
+    PC = PC + 1
+    ```
+  - For branch instructions:
+    ```text
+    If branch is taken:
+        PC = IR[7:0]
+    Else:
+        PC = PC + 1
+    ```
+
+- **Accumulator / Data Memory Update**
+  - If the ALU result destination is the Accumulator:
+    ```text
+    Acc = ALU.Out
+    ```
+  - If the ALU result destination is Data Memory:
+    ```text
+    DMem[IR[3:0]] = ALU.Out
+    ```
+
+- **Status Register Update**
+    ```text
+    SR = ALU.Status
+    ```
 
 The transitions can be simplified using enable port of corresponding registers, e.g. assign ALU.Out to Acc at every clock rising edge if Acc.E is set to 1. Such control signals as Acc.E are generated as a boolean function of both current state and the current instruction.
 
