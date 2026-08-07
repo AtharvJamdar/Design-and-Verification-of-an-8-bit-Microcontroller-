@@ -102,24 +102,35 @@ Each instruction in the microcontroller is 12 bits wide. Based on the instructio
 ## M-type (Memory Instruction):
 
 One operand is the Accumulator (ACC) (or may be ignored depending on the operation), while the peration), while the second operand is obtained from the second operand is obtained from the Data Memory (DMem). The operation result is stored either in the Accumulator or back into the same Data Memory location.
-
+<img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/235a68b7-aa86-41a8-8f43-b23cdc3ef660" />
 
 ## I-type (Immediate Instruction):
 
 One operand is the Accumulator (ACC), and the second operand is an immediate value immediate value encoded within the instruction. The result of the operation is always stored in the the instruction. The result of the operation is always stored in the Accumulator.
+<img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/58dcce35-b096-493f-8c73-3b058a369f99" />
 
 ## S-type (Special Instruction):
 
 These instructions do not require any operands. They are used to perform special processor operations These instructions do not require any operands. They are used to perform special processor such as NOP (No Operation).
+<img width="1610" height="307" alt="Image" src="https://github.com/user-attachments/assets/6622cf56-8d84-426c-987f-acb00d1ad941" />
 
 ## Instruction Set
-
-| Opcode Operation Description |
-| --- |
-| 0000 ADD Addition 0001 SUB Subtraction 0010 MOV Move |
-| 0011 LOAD Load 0100 STORE Store 0101 AND Bitwise AND 0110 OR Bitwise OR 0111 XOR Bitwise XOR 1000 INC Increment 1001 DEC Decrement 1010 ROL Rotate Left 1011 ROR Rotate Right 1100 SHL Shift Left |
-| 1101 SHR Shift Right |
-
+| Opcode | Operation | Description |
+|:------:|:---------:|-------------|
+| `0000` | **ADD**   | Addition |
+| `0001` | **SUB**   | Subtraction |
+| `0010` | **MOV**   | Move |
+| `0011` | **LOAD**  | Load |
+| `0100` | **STORE** | Store |
+| `0101` | **AND**   | Bitwise AND |
+| `0110` | **OR**    | Bitwise OR |
+| `0111` | **XOR**   | Bitwise XOR |
+| `1000` | **INC**   | Increment |
+| `1001` | **DEC**   | Decrement |
+| `1010` | **ROL**   | Rotate Left |
+| `1011` | **ROR**   | Rotate Right |
+| `1100` | **SHL**   | Shift Left |
+| `1101` | **SHR**   | Shift Right |
 
 ## Execution Flow (FSM)
 
