@@ -216,7 +216,7 @@ To verify the functionality of the 8-bit Microcontroller, four test programs wer
 | **Program 4** | Shift and Rotate Operations |
 
 
-## Test Program 1 – Memory Operations
+### Test Program 1 – Memory Operations
 
 This program verifies the execution of memory-related instructions such as loading data from memory into the accumulator and storing the accumulator contents back to memory.
 
@@ -233,7 +233,7 @@ This program verifies the execution of memory-related instructions such as loadi
 0000_0000_0000
 ```
 
-## Test Program 2 – Arithmetic Operations
+### Test Program 2 – Arithmetic Operations
 
 This program validates arithmetic instructions including addition, subtraction, increment, decrement, and related arithmetic operations.
 
@@ -250,7 +250,7 @@ This program validates arithmetic instructions including addition, subtraction, 
 0001_0000_1001
 ```
 
-## Test Program 3 – Logic Operations
+### Test Program 3 – Logic Operations
 
 This program verifies logical instructions such as AND, OR, XOR, and NOT using different operand combinations.
 
@@ -267,7 +267,7 @@ This program verifies logical instructions such as AND, OR, XOR, and NOT using d
 0001_0000_1001
 ```
 
-## Test Program 4 – Shift and Rotate Operations
+### Test Program 4 – Shift and Rotate Operations
 
 This program validates the shift and rotate instructions, including logical shifts and circular rotate operations.
 
