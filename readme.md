@@ -135,7 +135,7 @@ These instructions do not require any operands. They are used to perform special
 ## Execution Flow (FSM)
 
 Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage, and EXECUTE stage. Note that it is not pipelined. Together with the initial LOAD state, it can be considered as an FSM of 3 states (technically 4 states).
-
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/888042f1-f264-42cd-b738-f1c53fda21d0" />
 ## States:
 
 - 1. LOAD (initial state): load program to program memory, which takes 1 cycle per instruction loaded;
@@ -147,27 +147,16 @@ Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage,
 - 4. EXECUTE (of the third cycle): execute instruction
 
 ## Transitions:
-
-- 1. LOAD → FETCH (initialization finish):
-
-- a. Clear content of PC, IR, DR, Acc, SR; DMem is not required to be cleared.
-
-- 2. FETCH → DECODE (rising edge of second cycle) :
-
-- . IR = PMem [ PC ]
-
-- 3. DECODE → EXECUTE
-
-- . DR = DMem [ IR[3:0] ];
-
-- 4. EXECUTE → FETCH (rising edge of first cycle and fourth cycle)
-
-
-. For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
-
-- a. For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
-
-- b. For ALU instruction, SR = ALU.Status;
+1.	LOAD →  FETCH (initialization finish):
+    Clear content of PC, IR, DR, Acc, SR; DMem is not required to be cleared.
+2.	FETCH → DECODE (rising edge of second cycle) : 
+    IR = PMem [ PC ]
+3.	DECODE → EXECUTE
+    DR = DMem [ IR[3:0] ];
+4.	EXECUTE → FETCH (rising edge of first cycle and fourth cycle)
+    a. For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
+    b. For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
+    c. For ALU instruction, SR = ALU.Status;
 
 The transitions can be simplified using enable port of corresponding registers, e.g. assign ALU.Out to Acc at every clock rising edge if Acc.E is set to 1. Such control signals as Acc.E are generated as a boolean function of both current state and the current instruction.
 
