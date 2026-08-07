@@ -1,6 +1,6 @@
 ## Project Title
 
-Design and Verification of an 8-bit Microcontroller using Verilog
+### Design and Verification of an 8-bit Microcontroller using Verilog
 
 ## Project Summary
 
@@ -138,22 +138,22 @@ Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage,
 <img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/888042f1-f264-42cd-b738-f1c53fda21d0" />
 ## States:
 
-1. LOAD (initial state): load program to program memory, which takes 1 cycle per instruction loaded;
+**1. LOAD (initial state):** load program to program memory, which takes 1 cycle per instruction loaded;
 
-2. FETCH (first cycle): fetch current instruction from program memory;
+**2. FETCH (first cycle):** fetch current instruction from program memory;
 
-3. DECODE (second cycle): decode instruction to generate control logic, read data memory for operand;
+**3. DECODE (second cycle):** decode instruction to generate control logic, read data memory for operand;
 
-4. EXECUTE (of the third cycle): execute instruction
+**4. EXECUTE (of the third cycle):** execute instruction
 
 ## Transitions:
-1.	LOAD →  FETCH (initialization finish): 
+**1.	LOAD** →  FETCH (initialization finish): 
     Clear content of PC, IR, DR, Acc, SR; DMem is not required to be cleared.
-2.	FETCH → DECODE (rising edge of second cycle) : 
+**2.	FETCH** → DECODE (rising edge of second cycle) : 
     IR = PMem [ PC ]
-3.	DECODE → EXECUTE : 
+**3.	DECODE** → EXECUTE : 
     DR = DMem [ IR[3:0] ];
-4.	EXECUTE → FETCH (rising edge of first cycle and fourth cycle) : 
+**4.	EXECUTE** → FETCH (rising edge of first cycle and fourth cycle) : 
     - For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
     - For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
     - For ALU instruction, SR = ALU.Status;
@@ -164,7 +164,7 @@ The transitions can be simplified using enable port of corresponding registers, 
 
 The design was verified using a self-written Verilog testbench.
 
-Verification includes:
+**Verification includes:**
 
 - Reset verification
 
@@ -184,7 +184,7 @@ Verification includes:
 
 To verify the functionality of the 8-bit Microcontroller, four test programs were developed. Each program focuses on validating a specific group of instructions, ensuring correct execution of memory access, arithmetic, logical, and shift/rotate operations.
 
-## Test Program Summary
+**Test Program Summary**
 |  **Program**  | **Purpose**                 |
 | :-----------: | --------------------------- |
 | **Program 1** | Memory Operations           |
@@ -269,9 +269,7 @@ The simulation results verify the correct functionality of the proposed 8-bit Mi
 ## Tools Used
 
 - Xilinx Vivado (RTL Coding)
-
 - QuestaSim (Simulation Waveforms)
-
 - GitHub
 
 ## Authors
