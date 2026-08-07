@@ -147,13 +147,13 @@ Each instruction needs 3 clock cycles to finish, i.e. FETCH stage, DECODE stage,
 4. EXECUTE (of the third cycle): execute instruction
 
 ## Transitions:
-1.	LOAD →  FETCH (initialization finish):
+1.	LOAD →  FETCH (initialization finish): 
     Clear content of PC, IR, DR, Acc, SR; DMem is not required to be cleared.
 2.	FETCH → DECODE (rising edge of second cycle) : 
     IR = PMem [ PC ]
-3.	DECODE → EXECUTE
+3.	DECODE → EXECUTE : 
     DR = DMem [ IR[3:0] ];
-4.	EXECUTE → FETCH (rising edge of first cycle and fourth cycle)
+4.	EXECUTE → FETCH (rising edge of first cycle and fourth cycle) : 
     - For non-branch instruction, PC = PC + 1; for branch instruction, if branch is taken, PC = IR [7:0], otherwise PC = PC + 1;
     - For ALU instruction, if the result destination is accumulator, Acc = ALU.Out; if the result destination is data memory, DMem [ IR[3:0] ] = ALU.Out.
     - For ALU instruction, SR = ALU.Status;
@@ -164,21 +164,21 @@ The transitions can be simplified using enable port of corresponding registers, 
 
 The design was verified using a self-written Verilog testbench.
 
-## Verification includes:
+Verification includes:
 
-- \- Reset verification
+- Reset verification
 
-- \- Program loading verification
+- Program loading verification
 
-- \- Arithmetic instruction verification
+- Arithmetic instruction verification
 
-- \- Logical instruction verification
+- Logical instruction verification
 
-- \- Shift and rotate instruction verification
+- Shift and rotate instruction verification
 
-- \- Memory read/write verification
+- Memory read/write verification
 
-- \- Status flag verification
+- Status flag verification
 
 ## Test Programs
 
