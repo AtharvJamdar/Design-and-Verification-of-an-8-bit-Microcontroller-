@@ -299,6 +299,8 @@ The simulation results verify the correct functionality of the proposed 8-bit Mi
 
 ### Ketan Jamdar
 **B.E. Electronics and Telecommunication**  
+**PGCP-VLSI Design and Verification
+C-DAC ACTS, Pune**
 *RTL Design and Verification Engineer*
 
 - **GitHub:** https://github.com/ketan-jamdar
@@ -308,6 +310,8 @@ The simulation results verify the correct functionality of the proposed 8-bit Mi
 
 ### Atharv Jamdar
 **B.E. Electronics and Telecommunication**  
+**PGCP-VLSI Design and Verification
+C-DAC ACTS, Pune**
 *RTL Design and Verification Engineer*
 
 - **GitHub:** https://github.com/AtharvJamdar
