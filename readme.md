@@ -31,6 +31,7 @@ For verification I wrote multiple test programs in a binary file & loaded them i
 - Simulation performed in Xilinx Vivado
 
 ## Processor Architecture
+
 The microcontroller consists of three major subsystems:
 
 - Datapath
@@ -275,8 +276,9 @@ This program validates the shift and rotate instructions, including logical shif
 
 ## Simulation Results
 
-
 The simulation results verify the correct functionality of the proposed 8-bit Microcontroller. Waveforms generated using the simulation tool demonstrate the execution of different instruction types, including memory, arithmetic, logic, and shift/rotate operations. The results confirm correct instruction fetching, decoding, execution, register updates, memory access, and status flag generation.
+
+### Complete Execution
 
 ## Tools Used
 
