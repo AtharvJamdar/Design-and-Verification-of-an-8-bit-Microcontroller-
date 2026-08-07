@@ -18,36 +18,37 @@ For verification I wrote multiple test programs in a binary file & loaded them i
 
 ## Features
 
-- \ Designed a custom 8-bit Harvard Architecture Microcontroller
+- Designed a custom 8-bit Harvard Architecture Microcontroller
 
-- \ Developed in Verilog HDL
+- Developed in Verilog HDL
 
-- \- 12-bit custom instruction format
+- 12-bit custom instruction format
 
-- \- 4-stage instruction execution:
+- 4-stage instruction execution:
 
-- \- LOAD
+- LOAD
 
-- \- FETCH
+- FETCH
 
-- \- DECODE
+- DECODE
 
-- \- EXECUTE
+- EXECUTE
 
-- \- FSM-based Control Unit
+- FSM-based Control Unit
 
-- \- 14 ALU operations
+- 14 ALU operations
 
-- \- Separate Program Memory and Data Memory
+- Separate Program Memory and Data Memory
 
-- \- Binary instruction program loading using `\$readmemb`
+- Binary instruction program loading using `\$readmemb`
 
-- \- Functional verification using multiple test programs
+- Functional verification using multiple test programs
 
-
-\- Simulation performed in Xilinx Vivado
+- Simulation performed in Xilinx Vivado
 
 ## Processor Architecture
+
+
 
 ## RTL Module Hierarchy
 
