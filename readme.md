@@ -62,7 +62,6 @@ MicroController
 
 ├── Program Memory
 
-
 ├── Data Memory
 
 ├── Program Counter
@@ -81,14 +80,20 @@ MicroController
 
 ## Module Description
 
-|   | Module Description |   |   |   |   |
-| --- | --- | --- | --- | --- | --- |
-|   | ALU Control Logic | Performs arithmetic and logical operations Generates control signals based on current state and instruction |   |   |   |
-|   | Program Counter | Holds address of next instruction |   |   |   |
-|   | Program Memory | Stores program instructions |   |   |   |
-|   | Data Memory Stores data Instruction Register Holds current instruction |   |   |   |   |
-|   | Data Register | Stores data read from memory |   |   |   |
-|   | Accumulator Status Register MUX1/MUX2 | Main working register Stores Zero, Carry, Sign and Overflow flags Select input sources |   |   |   |
+## Module Description
+
+| Module | Description |
+|--------|-------------|
+| **ALU** | Performs arithmetic and logical operations. |
+| **Control Logic** | Generates control signals based on the current state and instruction. |
+| **Program Counter (PC)** | Holds the address of the next instruction to be executed. |
+| **Program Memory (PMem)** | Stores the program instructions. |
+| **Data Memory (DMem)** | Stores data used during program execution. |
+| **Instruction Register (IR)** | Holds the currently fetched instruction. |
+| **Data Register (DR)** | Stores data read from the data memory. |
+| **Accumulator (ACC)** | Main working register that stores ALU operation results. |
+| **Status Register (SR)** | Stores processor status flags: Zero (Z), Carry (C), Sign (S), and Overflow (O). |
+| **MUX1 / MUX2** | Select the appropriate input source for the Program Counter and ALU based on control signals. |
 
 ## Instruction Format
 
