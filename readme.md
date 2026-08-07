@@ -1,4 +1,4 @@
-# 8-bit Microcontroller
+# Design and Verification of an 8-bit Microcontroller 
 
 ## Project Summary :
 
