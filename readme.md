@@ -1,4 +1,4 @@
-# Design and Verification of an 8-bit Microcontroller using Verilog
+# 8-bit Microcontroller
 
 ## Project Summary :
 
